@@ -1,0 +1,21 @@
+# Environment variables
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment (if you use one, adjust folder name if needed)
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# IDE/Editor specific files (optional but good practice)
+.vscode/
+.idea/
+*.swp
+*~

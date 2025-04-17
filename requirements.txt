@@ -1,0 +1,7 @@
+# requirements.txt
+Flask>=2.0
+google-cloud-speech>=2.15
+google-cloud-texttospeech>=2.10
+google-generativeai>=0.4  # For Gemini
+python-dotenv>=0.20
+pydub>=0.25 # Optional but recommended for audio handling flexibility
