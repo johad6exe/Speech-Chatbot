@@ -5,3 +5,8 @@ torch
 transformers
 accelerate
 ffmpeg-python
+sentencepiece
+datasets
+TTS
+
+
