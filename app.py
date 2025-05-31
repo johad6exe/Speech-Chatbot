@@ -11,7 +11,7 @@ from pydub import AudioSegment
 
 # --- Load Environment Variables ---
 load_dotenv()
-HF_API_KEY = os.getenv("HF_API_KEY")
+HF_API_KEY = os.getenv("HUGGINGFACE_API_KEY")
 
 # --- Configure Logging ---
 logging.basicConfig(level=logging.INFO)
@@ -19,7 +19,13 @@ logging.basicConfig(level=logging.INFO)
 # --- Initialize Hugging Face Pipelines ---
 logging.info("Loading Hugging Face pipelines...")
 asr_pipe = pipeline("automatic-speech-recognition", model="openai/whisper-large-v3", device=0 if torch.cuda.is_available() else -1, token=HF_API_KEY)
-llm_pipe = pipeline("text-generation", model="deepseek-ai/DeepSeek-R1-0528", device=0 if torch.cuda.is_available() else -1, trust_remote_code=True, token=HF_API_KEY)
+llm_pipe = pipeline(
+    "text-generation",
+    model="mistralai/Mistral-7B-Instruct-v0.1",  # ✅ Replace here
+    device=0 if torch.cuda.is_available() else -1,
+    token=HF_API_KEY
+)
+
 tts_pipe = pipeline("text-to-speech", model="microsoft/speecht5_tts", device=0 if torch.cuda.is_available() else -1, token=HF_API_KEY)
 logging.info("Pipelines loaded successfully.")
 
